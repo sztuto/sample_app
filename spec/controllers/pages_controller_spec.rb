@@ -10,7 +10,11 @@ describe PagesController do
   describe "GET 'home'" do
     
     describe "when not signed in" do
-    
+      
+      before(:each) do
+        get :home
+      end
+      
       it "should be successful" do
         get 'home'
         response.should be_success
